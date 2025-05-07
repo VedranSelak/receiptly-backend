@@ -1,0 +1,40 @@
+# Don't include Git or other VCS files
+.git
+.gitignore
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Unit test & coverage files
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# Bytecode and C extensions
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Poetry files you don’t need inside the container
+.poetry/
+
+# Environment files (sensitive info)
+.env
+.env.*
+
+# Build, distribution
+build/
+dist/
+*.egg-info/
+
+# Other
+*.log

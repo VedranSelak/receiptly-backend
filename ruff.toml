@@ -1,0 +1,9 @@
+line-length = 120
+
+[lint]
+select = ["F", "E501", "I"]
+
+[format]
+quote-style = "double" 
+docstring-code-format = true
+docstring-code-line-length = 72
