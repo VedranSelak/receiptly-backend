@@ -21,6 +21,18 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = Field(...)
     JWT_SECRET: str = Field(...)
     JWT_ALGORITHM: str = Field(...)
+    GCP_PROJECT_ID: str = Field(...)
+    GCP_LOCATION: str = Field(...)
+    GCP_OCR_PROCESSOR_ID: str = Field(...)
+    GCP_SERVICE_ACCOUNT_JSON: str = Field(...)
+
+    @property
+    def GCP_API_ENDPOINT(self) -> str:
+        return f"{self.GCP_LOCATION}-documentai.googleapis.com"
+
+    @property
+    def GCP_PROCESSOR_PATH(self) -> str:
+        return f"projects/{settings.GCP_PROJECT_ID}/locations/{settings.GCP_LOCATION}/processors/{settings.GCP_OCR_PROCESSOR_ID}"
 
     @property
     def SQLALCHEMY_DATABASE_URL(self) -> str:
